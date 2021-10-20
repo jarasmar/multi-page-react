@@ -1,11 +1,11 @@
 import React from 'react';
 import  ProductsList from '../components/productsList'
 
-function Products() {
+function Products(props) {
     return (
         <div className="page products">
             <div className="header">Products</div>
-            <ProductsList />
+            <ProductsList products={ props.products } />
         </div>
     )
 }
