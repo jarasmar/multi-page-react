@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Logo from "./logo";
 
 function Footer() {
     return (
         <div className="footer">
-            <span className="logo">Logo</span>
+            <Logo />
             <div className='links'> 
                 <Link to='/'>Home</Link>
                 <Link to='/about'>About</Link>

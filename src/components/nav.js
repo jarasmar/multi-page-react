@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Logo from "./logo";
 
 function Nav(props) {
     return (
         <div className='nav'>
-            <span class="logo">Logo</span>
+            <Logo />
             <div>
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link> 
