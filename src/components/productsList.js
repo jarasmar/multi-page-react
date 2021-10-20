@@ -4,7 +4,11 @@ import Product from './product'
 function ProductsList(props) {
     const products = props.products;
     const listProducts = products.map((product) => 
-        <Product key={ product._id } product={ product } />
+        <Product 
+            key={ product._id } 
+            product={ product } 
+            onClick={ props.onClick } 
+        />
     )
 
     return (

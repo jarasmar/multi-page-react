@@ -5,7 +5,7 @@ function Product(props) {
         <li>
             <span className="product-name">{ props.product.name }</span>
             <span className="product-price">£ { props.product.price }</span>
-            <button className="buy-btn">Buy</button>
+            <button className="buy-btn" onClick={ props.onClick }>Buy</button>
         </li>
     )
 }

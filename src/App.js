@@ -11,15 +11,30 @@ class App extends React.Component {
     }
   }
 
+  handleAddToCart(event) {
+    console.log('Added to cart')
+  }
+
   render(){
     return (
       <div className="App">
         <Router>
           <Nav />
           <Switch>
-            <Route path="/" exact component={ () => <Home /> } />
-            <Route path="/products" exact component={ () => <Products products={ this.state.products } /> } />
-            <Route path="/basket" exact component={ () => <Basket /> } />
+            <Route path="/" exact component={ () => 
+              <Home /> 
+            } />
+
+            <Route path="/products" exact component={ () => 
+              <Products 
+                products={ this.state.products } 
+                onClick={ () => this.handleAddToCart() } 
+              /> 
+            } />
+
+            <Route path="/basket" exact component={ () => 
+              <Basket /> 
+            } />
           </Switch>
           <Footer />
         </Router>
