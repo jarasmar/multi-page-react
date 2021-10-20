@@ -30,6 +30,39 @@ body {
     text-decoration: none;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 24px;
+    background-color: #17005e;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.footer a {
+    color: #fff;
+    font-size: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    text-decoration: none;
+}
+
+.footer-text {
+    padding-top: 10px;
+    border-top: 1px solid #fff;
+    text-align: right;
+}
+
 .logo {
     color: #fff;
     text-transform: uppercase;
