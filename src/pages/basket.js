@@ -14,6 +14,8 @@ function Basket(props) {
                 <BasketList 
                     basket={ props.basket } 
                     onClick={ props.onClick }
+                    increaseQty={ props.increaseQty }
+                    decreaseQty={ props.decreaseQty }
                 />
                 <Checkout 
                     basket={ props.basket }

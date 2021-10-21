@@ -13,6 +13,8 @@ class App extends React.Component {
     }
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.handleRemoveFromBasket = this.handleRemoveFromBasket.bind(this);
+    this.increaseQty = this.increaseQty.bind(this);
+    this.decreaseQty = this.decreaseQty.bind(this);
   }
 
   handleAddToCart(item) {
@@ -45,6 +47,36 @@ class App extends React.Component {
     })
   }
 
+  increaseQty(item) {
+    let basket = this.state.basket;
+    let itemsCount = this.state.itemsCount;
+
+    basket[basket.indexOf(item)].qty += 1
+    itemsCount += 1;
+
+    this.setState({
+      basket: basket,
+      itemsCount: itemsCount
+    })
+  }
+
+  decreaseQty(item) {
+    let basket = this.state.basket;
+    let itemsCount = this.state.itemsCount;
+
+    if (basket[basket.indexOf(item)].qty === 1) {
+      return this.handleRemoveFromBasket(item)
+    } else {
+      basket[basket.indexOf(item)].qty -= 1;
+      itemsCount -= 1;
+    }
+    
+    this.setState({
+      basket: basket,
+      itemsCount: itemsCount
+    })
+  }
+
   render(){
     return (
       <div className="App">
@@ -69,6 +101,8 @@ class App extends React.Component {
                 basket={ this.state.basket }
                 itemsCount={ this.state.itemsCount }
                 onClick={ this.handleRemoveFromBasket }
+                increaseQty={ this.increaseQty }
+                decreaseQty={ this.decreaseQty }
               /> 
             } />
           </Switch>

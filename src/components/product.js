@@ -7,7 +7,12 @@ function Product(props) {
             <span className="product-name">{ props.product.name }</span>
             <span className="product-price">£ { props.product.price }</span>
             { props.qty ? 
-                <QtyController qty={ props.product.qty } />
+                <QtyController 
+                    product={ props.product }
+                    qty={ props.product.qty } 
+                    increaseQty={ props.increaseQty } 
+                    decreaseQty={ props.decreaseQty }
+                />
             : '' }
             <button className="buy-btn" onClick={ () => props.onClick(props.product) }>{ props.button }</button>
         </li>
