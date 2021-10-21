@@ -17,6 +17,7 @@ function Basket(props) {
                 />
                 <Checkout 
                     basket={ props.basket }
+                    itemsCount={ props.itemsCount }
                 />
                 </div>
             ) : (

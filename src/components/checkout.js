@@ -9,7 +9,7 @@ function Checkout(props) {
     
     return (
         <div className="checkout">
-            <div className="checkout-items">{ props.basket.length } Item(s)</div>
+            <div className="checkout-items">{ props.itemsCount } Item(s)</div>
             <div className="checkout-total">Total: £ { total }</div>
             <button className="checkout-btn">Order Now</button>
         </div>
