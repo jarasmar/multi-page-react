@@ -5,7 +5,7 @@ function BasketList(props) {
     const basketProducts = props.basket;
     const listBasket = basketProducts.map((product) =>
         <Product 
-            key={ product.id }
+            key={ product._id }
             product={ product }
             onClick={ props.onClick }
             increaseQty={ props.increaseQty }

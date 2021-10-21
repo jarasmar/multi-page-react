@@ -1,5 +1,5 @@
 import React from 'react';
-import QtyController from './qtyController';
+import QtyController from './qty_controller';
 import Button from './button';
 
 function Product(props) {

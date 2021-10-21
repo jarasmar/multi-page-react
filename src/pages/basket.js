@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import  BasketList from '../components/basketList'
+import  BasketList from '../components/basket_list'
 import  Checkout from '../components/checkout'
 import Button from '../components/button';
 
