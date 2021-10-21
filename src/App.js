@@ -22,7 +22,12 @@ class App extends React.Component {
   }
 
   handleRemoveFromBasket(item) {
-    console.log('Remove from basket')
+    const basket = this.state.basket.filter(function(i) {
+      return i !== item
+    });
+    this.setState({
+      basket: basket
+    })
   }
 
   render(){
