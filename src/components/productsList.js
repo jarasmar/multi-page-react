@@ -8,6 +8,7 @@ function ProductsList(props) {
             key={ product._id } 
             product={ product } 
             onClick={ props.onClick } 
+            button='Buy'
         />
     )
 

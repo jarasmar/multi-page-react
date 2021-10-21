@@ -7,8 +7,13 @@ function Basket(props) {
         <div className="page basket">
             <div className="header">Basket</div>
             <div className="content">
-                <BasketList />
-                <Checkout basketQty={ props.basketQty }/>
+                <BasketList 
+                    basket={ props.basket } 
+                    onClick={ props.onClick }
+                />
+                <Checkout 
+                    basket={ props.basket }
+                />
             </div>
             
         </div>

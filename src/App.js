@@ -10,7 +10,8 @@ class App extends React.Component {
       products: allProducts,
       basket: []
     }
-    this.handleAddToCart = this.handleAddToCart.bind(this)
+    this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.handleRemoveFromBasket = this.handleRemoveFromBasket.bind(this);
   }
 
   handleAddToCart(item) {
@@ -18,6 +19,10 @@ class App extends React.Component {
     this.setState({
       basket: basket
     })
+  }
+
+  handleRemoveFromBasket(item) {
+    console.log('Remove from basket')
   }
 
   render(){
@@ -41,7 +46,8 @@ class App extends React.Component {
 
             <Route path="/basket" exact component={ () => 
               <Basket 
-                basketQty={ this.state.basket.length }
+                basket={ this.state.basket }
+                onClick={ this.handleRemoveFromBasket }
               /> 
             } />
           </Switch>

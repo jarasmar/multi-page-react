@@ -1,18 +1,19 @@
 import React from 'react';
+import Product from './product';
 
-function BasketList() {
+function BasketList(props) {
+    const basketProducts = props.basket;
+    const listBasket = basketProducts.map((product) =>
+        <Product 
+            key={ product.id }
+            product={ product }
+            onClick={ props.onClick }
+            button='Remove'
+        />
+    )
     return (
         <ul className="basket-list">
-            <li>
-                <span className="product-name">Product A</span>
-                <span className="product-price">£ 10</span>
-                <button className="remove-btn">Remove</button>
-            </li>
-            <li>
-                <span className="product-name">Product B</span>
-                <span className="product-price">£ 10</span>
-                <button className="remove-btn">Remove</button>
-            </li>
+            { listBasket }
         </ul>
     )
 }
