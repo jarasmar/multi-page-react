@@ -5,9 +5,10 @@ import Links from "./links";
 
 function Nav(props) {
     return (
+        
         <div className='nav'>
             <Logo />
-            <Links />
+            <Links basketQty={ props.basketQty }/>
         </div>
     )
 }

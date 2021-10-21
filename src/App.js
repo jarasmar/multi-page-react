@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: allProducts
+      products: allProducts,
+      basket: [1]
     }
   }
 
@@ -19,7 +20,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <Nav />
+          <Nav 
+            basketQty={ this.state.basket.length }
+          />
           <Switch>
             <Route path="/" exact component={ () => 
               <Home /> 
@@ -33,7 +36,9 @@ class App extends React.Component {
             } />
 
             <Route path="/basket" exact component={ () => 
-              <Basket /> 
+              <Basket 
+                basketQty={ this.state.basket.length }
+              /> 
             } />
           </Switch>
           <Footer />
