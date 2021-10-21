@@ -133,6 +133,29 @@ li .product-price {
     width: calc(50% - 20px);
 }
 
+.qty-controller {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.product-qty {
+    font-size: 20px;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border: 2px solid #17005e;
+    border-radius: 3px;
+}
+
+.qty-btn {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.qty-btn:hover {
+    cursor: pointer;
+}
+
 .basket-list {
     width: 50%;
 }
