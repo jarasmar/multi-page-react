@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './button';
+import { Link } from 'react-router-dom';
 
 function Checkout(props) {
     const basketItems = props.basket;
@@ -13,9 +14,9 @@ function Checkout(props) {
             <div className="checkout-items">{ props.itemsCount } Item(s)</div>
             <div className="checkout-total">Total: £ { total }</div>
             <Button 
-                text='Order now'
+                text={<Link to='/thank-you'>Order Now</Link>}
                 className='checkout'
-                onClick={ props.handleCheckout }
+                onClick={ props.clearAfterCheckout }
             />
         </div>
     )

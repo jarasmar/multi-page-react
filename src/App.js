@@ -16,7 +16,7 @@ class App extends React.Component {
     this.handleRemoveFromBasket = this.handleRemoveFromBasket.bind(this);
     this.increaseQty = this.increaseQty.bind(this);
     this.decreaseQty = this.decreaseQty.bind(this);
-    this.handleCheckout = this.handleCheckout.bind(this)
+    this.clearAfterCheckout = this.clearAfterCheckout.bind(this)
   }
 
   handleAddToCart(item) {
@@ -75,17 +75,22 @@ class App extends React.Component {
     })
   }
 
-  handleCheckout() {
-    console.log('checked out');
+  clearAfterCheckout() {
+    this.setState({
+      basket: [],
+      itemsCount: 0
+    })
   }
 
   render(){
     return (
       <div className="App">
+        
         <Router>
           <Nav 
             basketQty={ this.state.itemsCount }
           />
+          
           <Switch>
             <Route path="/" exact component={ () => 
               <Home /> 
@@ -105,7 +110,7 @@ class App extends React.Component {
                 onClick={ this.handleRemoveFromBasket }
                 increaseQty={ this.increaseQty }
                 decreaseQty={ this.decreaseQty }
-                handleCheckout={ this.handleCheckout }
+                clearAfterCheckout={ this.clearAfterCheckout }
               /> 
             } />
 
@@ -113,6 +118,7 @@ class App extends React.Component {
               <ThankYou />
             } />
           </Switch>
+
           <Footer />
         </Router>
       </div>
