@@ -271,3 +271,18 @@ button.home-btn {
     font-size: 30px;
     color: #17005e;
 }
+
+.page.thank-you .thank-you-container {
+    height: auto;
+    padding: 20px;
+}
+
+ul.last-order-list {
+    font-size: 20px;
+    text-transform: lowercase;
+    padding: 20px 0;
+}
+
+ul.last-order-list li {
+    padding: 5px 0;
+}

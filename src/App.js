@@ -10,7 +10,8 @@ class App extends React.Component {
     this.state = {
       products: allProducts,
       basket: [],
-      itemsCount: 0
+      itemsCount: 0,
+      lastOrder: ''
     }
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.handleRemoveFromBasket = this.handleRemoveFromBasket.bind(this);
@@ -76,9 +77,11 @@ class App extends React.Component {
   }
 
   clearAfterCheckout() {
+    const lastOrder = this.state.basket
     this.setState({
       basket: [],
-      itemsCount: 0
+      itemsCount: 0,
+      lastOrder: lastOrder
     })
   }
 
@@ -115,7 +118,7 @@ class App extends React.Component {
             } />
 
             <Route path="/thank-you" exact component={ () => 
-              <ThankYou />
+              <ThankYou lastOrder={ this.state.lastOrder } />
             } />
           </Switch>
 
