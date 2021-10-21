@@ -15,6 +15,7 @@ function Checkout(props) {
             <Button 
                 text='Order now'
                 className='checkout'
+                onClick={ props.handleCheckout }
             />
         </div>
     )

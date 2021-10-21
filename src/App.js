@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Nav, Footer } from "./components";
-import { Home, Products, Basket } from "./pages";
+import { Home, Products, Basket, ThankYou } from "./pages";
 import { allProducts } from "./data"
 
 class App extends React.Component {
@@ -16,6 +16,7 @@ class App extends React.Component {
     this.handleRemoveFromBasket = this.handleRemoveFromBasket.bind(this);
     this.increaseQty = this.increaseQty.bind(this);
     this.decreaseQty = this.decreaseQty.bind(this);
+    this.handleCheckout = this.handleCheckout.bind(this)
   }
 
   handleAddToCart(item) {
@@ -74,6 +75,10 @@ class App extends React.Component {
     })
   }
 
+  handleCheckout() {
+    console.log('checked out');
+  }
+
   render(){
     return (
       <div className="App">
@@ -100,7 +105,12 @@ class App extends React.Component {
                 onClick={ this.handleRemoveFromBasket }
                 increaseQty={ this.increaseQty }
                 decreaseQty={ this.decreaseQty }
+                handleCheckout={ this.handleCheckout }
               /> 
+            } />
+
+            <Route path="/thank-you" exact component={ () => 
+              <ThankYou />
             } />
           </Switch>
           <Footer />

@@ -209,7 +209,7 @@ button.checkout {
     height: calc(100vh - 265px);
     margin-top: 50px;
     margin-bottom: 215px;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 24px;
     background-color: #f2eeff;
 }
@@ -222,7 +222,8 @@ button.checkout {
     margin-bottom: 20px;
 }
 
-.page.home {
+.page.home,
+.page.thank-you {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -253,7 +254,8 @@ button.home-btn {
     align-items: flex-start;
 }
 
-.page.basket .empty-basket-container {
+.page.basket .empty-basket-container,
+.page.thank-you .thank-you-container {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,4 +1,4 @@
-export default [
+const allProducts = [
   {
     "_id": 1,
     "name": "TOMATES (KG)",
@@ -72,3 +72,5 @@ export default [
     "qty": 0
   }
 ];
+
+export default allProducts;
