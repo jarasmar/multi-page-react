@@ -91,11 +91,12 @@ ul {
 
 /* COMPONENTS */
 
-.logo {
+.logo a{
     color: #fff;
     text-transform: uppercase;
     font-weight: 900;
     font-size: 32px;
+    padding-left: 0;
 }
 
 ul li {
