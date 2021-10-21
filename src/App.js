@@ -29,10 +29,7 @@ class App extends React.Component {
       itemsCount += 1;
     }
     
-    this.setState({
-      basket: basket,
-      itemsCount: itemsCount
-    })
+    this.updateItemsCountAndBasket(basket, itemsCount);
   }
 
   handleRemoveFromBasket(item) {
@@ -41,10 +38,8 @@ class App extends React.Component {
       return i !== item
     });
     itemsCount -= item.qty;
-    this.setState({
-      basket: basket,
-      itemsCount: itemsCount
-    })
+    
+    this.updateItemsCountAndBasket(basket, itemsCount);
   }
 
   increaseQty(item) {
@@ -54,10 +49,7 @@ class App extends React.Component {
     basket[basket.indexOf(item)].qty += 1
     itemsCount += 1;
 
-    this.setState({
-      basket: basket,
-      itemsCount: itemsCount
-    })
+    this.updateItemsCountAndBasket(basket, itemsCount);
   }
 
   decreaseQty(item) {
@@ -70,7 +62,11 @@ class App extends React.Component {
       basket[basket.indexOf(item)].qty -= 1;
       itemsCount -= 1;
     }
-    
+
+    this.updateItemsCountAndBasket(basket, itemsCount);
+  }
+
+  updateItemsCountAndBasket(basket, itemsCount) {
     this.setState({
       basket: basket,
       itemsCount: itemsCount
