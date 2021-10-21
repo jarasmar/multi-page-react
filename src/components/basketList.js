@@ -11,7 +11,7 @@ function BasketList(props) {
             increaseQty={ props.increaseQty }
             decreaseQty={ props.decreaseQty }
             qty={ product.qty }
-            button='Remove'
+            buttonText='remove'
         />
     )
     return (

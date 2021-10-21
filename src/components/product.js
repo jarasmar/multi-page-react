@@ -1,5 +1,6 @@
 import React from 'react';
 import QtyController from './qtyController';
+import Button from './button';
 
 function Product(props) {
     return (
@@ -14,7 +15,11 @@ function Product(props) {
                     decreaseQty={ props.decreaseQty }
                 />
             : '' }
-            <button className="buy-btn" onClick={ () => props.onClick(props.product) }>{ props.button }</button>
+            <Button 
+                text={ props.buttonText }
+                className={ props.buttonText }
+                onClick={ () => props.onClick(props.product) }
+            />
         </li>
     )
 }

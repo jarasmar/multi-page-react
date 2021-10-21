@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './button';
 
 function Checkout(props) {
     const basketItems = props.basket;
@@ -8,10 +9,13 @@ function Checkout(props) {
     });
     
     return (
-        <div className="checkout">
+        <div className="checkout-container">
             <div className="checkout-items">{ props.itemsCount } Item(s)</div>
             <div className="checkout-total">Total: £ { total }</div>
-            <button className="checkout-btn">Order Now</button>
+            <Button 
+                text='Order now'
+                className='checkout'
+            />
         </div>
     )
 }

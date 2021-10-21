@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import  BasketList from '../components/basketList'
 import  Checkout from '../components/checkout'
+import Button from '../components/button';
 
 function Basket(props) {
     const basketQty = props.basket.length;
@@ -23,9 +24,12 @@ function Basket(props) {
                 />
                 </div>
             ) : (
-                <div className='empty-basket'>
+                <div className='empty-basket-container'>
                     <span>Your basket is empty</span>
-                    <button><Link to='/products'>Shop Here</Link></button>
+                    <Button 
+                        text={<Link to='/products'>Shop Here</Link>}
+                        className='empty-basket'
+                    />
                 </div>
             )}
         </div>

@@ -21,6 +21,10 @@ button {
     border-radius: 4px;
 } 
 
+button:hover {
+    cursor: pointer;
+}
+
 a {
     color: #fff;
     text-decoration: none;
@@ -160,7 +164,7 @@ li .product-price {
     width: 50%;
 }
 
-.checkout {
+.checkout-container {
     width: 40%;
     margin-top: 10px;
     padding: 20px;
@@ -180,7 +184,7 @@ li .product-price {
     margin-bottom: 20px;
 }
 
-.checkout-btn {
+button.checkout {
     align-self: center;
 }
 
@@ -215,7 +219,7 @@ li .product-price {
     text-transform: uppercase;
     font-weight: 900;
 }
-.page.home .subtitle {
+button.home-btn {
     font-size: 30px;
     text-transform: uppercase;
     font-weight: 500;
@@ -234,7 +238,7 @@ li .product-price {
     align-items: flex-start;
 }
 
-.page.basket .empty-basket {
+.page.basket .empty-basket-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
