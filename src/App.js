@@ -8,12 +8,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       products: allProducts,
-      basket: [1]
+      basket: []
     }
+    this.handleAddToCart = this.handleAddToCart.bind(this)
   }
 
-  handleAddToCart(event) {
-    console.log('Added to cart')
+  handleAddToCart(item) {
+    const basket = this.state.basket.concat(item);
+    this.setState({
+      basket: basket
+    })
   }
 
   render(){
@@ -31,7 +35,7 @@ class App extends React.Component {
             <Route path="/products" exact component={ () => 
               <Products 
                 products={ this.state.products } 
-                onClick={ () => this.handleAddToCart() } 
+                onClick={ this.handleAddToCart } 
               /> 
             } />
 

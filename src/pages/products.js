@@ -7,7 +7,7 @@ function Products(props) {
             <div className="header">Products</div>
             <ProductsList 
                 products={ props.products } 
-                onClick={ props.onClick } 
+                onClick={ (item) => props.onClick(item) } 
             />
         </div>
     )
