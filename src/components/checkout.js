@@ -2,10 +2,9 @@ import React from 'react';
 
 function Checkout(props) {
     const basketItems = props.basket;
-    console.log(basketItems)
     let total = 0;
     basketItems.forEach(item => {
-        total += item.price
+        total += (item.price * item.qty)
     });
     
     return (

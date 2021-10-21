@@ -8,6 +8,7 @@ function BasketList(props) {
             key={ product.id }
             product={ product }
             onClick={ props.onClick }
+            qty={ product.qty }
             button='Remove'
         />
     )

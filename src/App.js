@@ -15,7 +15,14 @@ class App extends React.Component {
   }
 
   handleAddToCart(item) {
-    const basket = this.state.basket.concat(item);
+    let basket = this.state.basket;
+    if (basket.indexOf(item) >= 0) {
+      basket[basket.indexOf(item)].qty += 1
+    } else {
+      item.qty += 1
+      basket = basket.concat(item);
+    }
+    
     this.setState({
       basket: basket
     })
@@ -75,7 +82,8 @@ const allProducts = [
     "rating": 4.5,
     "numReviews": 10,
     "available": true,
-    "maxOrder": 10
+    "maxOrder": 10,
+    "qty": 0
   },
   {
     "_id": 2,
@@ -86,7 +94,8 @@ const allProducts = [
     "rating": 5,
     "numReviews": 8,
     "available": false,
-    "maxOrder": 8
+    "maxOrder": 8,
+    "qty": 0
   },
   {
     "_id": 3,
@@ -97,7 +106,8 @@ const allProducts = [
     "rating": 5,
     "numReviews": 15,
     "available": true,
-    "maxOrder": 5
+    "maxOrder": 5,
+    "qty": 0
   },
   {
     "_id": 4,
@@ -108,7 +118,8 @@ const allProducts = [
     "rating": 4.5,
     "numReviews": 10,
     "available": false,
-    "maxOrder": 10
+    "maxOrder": 10,
+    "qty": 0
   },
   {
     "_id": 5,
@@ -119,7 +130,8 @@ const allProducts = [
     "rating": 5,
     "numReviews": 8,
     "available": true,
-    "maxOrder": 12
+    "maxOrder": 12,
+    "qty": 0
   },
   {
     "_id": 6,
@@ -130,6 +142,7 @@ const allProducts = [
     "rating": 5,
     "numReviews": 15,
     "available": true,
-    "maxOrder": 7
+    "maxOrder": 7,
+    "qty": 0
   }
 ]
