@@ -137,10 +137,17 @@ li .product-price {
     width: calc(50% - 20px);
 }
 
+.qty-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .qty-controller {
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
 }
 
 .product-qty {
@@ -158,6 +165,14 @@ li .product-price {
 
 .qty-btn:hover {
     cursor: pointer;
+}
+
+button.remove-btn {
+    margin-top: 0;
+    font-size: 20px;
+    text-transform: none;
+    background-color: transparent;
+    color: #17005e;
 }
 
 .basket-list {
